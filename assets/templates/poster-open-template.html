@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1080px;background:#fff;font-family:'Inter',Helvetica,Arial,sans-serif;color:#141414;overflow:hidden}
+.wrap{position:relative;width:1080px;height:1080px;padding:72px 73px}
+.logo{font-size:46px;font-weight:900;font-style:italic;letter-spacing:-1px}
+.bar{position:absolute;left:73px;top:270px;width:50px;height:9px;border-radius:5px;background:#EE6A1B}
+.label{position:absolute;left:73px;top:300px;font-size:23px;font-weight:700;color:#4a4a4a;letter-spacing:.3px}
+.title{position:absolute;left:68px;top:356px;font-size:92px;font-weight:900;line-height:1.02;letter-spacing:-1px}
+.sub1{position:absolute;left:73px;top:590px;font-size:28px;font-weight:700}
+.sub2{position:absolute;left:73px;top:638px;font-size:28px;font-weight:400;color:#555}
+.pill{position:absolute;left:73px;top:734px;padding:18px 24px;background:#FDF0E7;border-radius:30px;font-size:21px;font-weight:700}
+.card{position:absolute;right:73px;top:330px;width:400px;height:450px;border-radius:28px;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.12);overflow:hidden;border:1px solid #eee}
+.card .top{background:#141414;color:#fff;text-align:center;padding:22px 0;font-size:22px;font-weight:700;letter-spacing:4px}
+.card .day{text-align:center;font-size:30px;font-weight:700;color:#EE6A1B;margin-top:34px;letter-spacing:2px}
+.card .date{text-align:center;font-size:140px;font-weight:900;line-height:1;margin-top:6px;letter-spacing:-4px}
+.card .month{text-align:center;font-size:30px;font-weight:600;color:#555;margin-top:6px;letter-spacing:3px}
+.card .hours{position:absolute;left:0;right:0;bottom:0;text-align:center;padding:22px 0;border-top:2px dashed #eee;font-size:26px;font-weight:800}
+.card .hours span{color:#EE6A1B}
+.cap{position:absolute;right:73px;top:812px;width:400px;text-align:center;font-size:19px;color:#555}
+.line{position:absolute;left:73px;right:73px;top:918px;height:2px;background:#e3e3e3}
+.foot{position:absolute;top:962px;font-size:20px;font-weight:700;letter-spacing:.3px}
+.fl{left:73px}.fr{right:92px;color:#444}
+</style></head>
+<body><div class="wrap">
+<div class="logo">Genius</div>
+<div class="bar"></div>
+<div class="label">{{LABEL}}</div>
+<div class="title">WE'RE<br>OPEN NOW</div>
+<div class="sub1">Laptop &amp; PC repair, today.</div>
+<div class="sub2">Walk in, we're ready to help.</div>
+<div class="pill">{{HOURS_PILL}}</div>
+<div class="card">
+  <div class="top">TODAY</div>
+  <div class="day">{{DAY}}</div>
+  <div class="date">{{DATE}}</div>
+  <div class="month">{{MONTH_YEAR}}</div>
+  <div class="hours"><span>●</span> {{CARD_HOURS}}</div>
+</div>
+<div class="cap">{{CAPTION}}</div>
+<div class="line"></div>
+<div class="foot fl">WALK IN TO OUR STORE</div>
+<div class="foot fr">BANGI &nbsp;/&nbsp; CYBERJAYA</div>
+</div></body></html>
