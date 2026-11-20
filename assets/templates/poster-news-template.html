@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
+<!-- Genius Advanced - poster berita (1080x1350). VARIANT: v-foto | v-penuh | v-logo -->
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:1080px;height:1080px;background:#fff;font-family:'Inter',Helvetica,Arial,sans-serif;color:#141414;overflow:hidden}
-.wrap{position:relative;width:1080px;height:1080px;padding:72px 73px}
-.logo{font-size:46px;font-weight:900;font-style:italic;letter-spacing:-1px}
-.bar{position:absolute;left:73px;top:270px;width:50px;height:9px;border-radius:5px;background:#EE6A1B}
-.label{position:absolute;left:73px;top:300px;font-size:23px;font-weight:700;color:#4a4a4a;letter-spacing:.3px}
-.title{position:absolute;left:68px;top:356px;font-size:92px;font-weight:900;line-height:1.02;letter-spacing:-1px}
-.sub1{position:absolute;left:73px;top:590px;font-size:28px;font-weight:700}
-.sub2{position:absolute;left:73px;top:638px;font-size:28px;font-weight:400;color:#555}
-.pill{position:absolute;left:73px;top:734px;padding:18px 24px;background:#FDF0E7;border-radius:30px;font-size:21px;font-weight:700}
-.card{position:absolute;right:73px;top:330px;width:400px;height:450px;border-radius:28px;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.12);overflow:hidden;border:1px solid #eee}
-.card .top{background:#141414;color:#fff;text-align:center;padding:22px 0;font-size:22px;font-weight:700;letter-spacing:4px}
-.card .day{text-align:center;font-size:30px;font-weight:700;color:#EE6A1B;margin-top:34px;letter-spacing:2px}
-.card .date{text-align:center;font-size:140px;font-weight:900;line-height:1;margin-top:6px;letter-spacing:-4px}
-.card .month{text-align:center;font-size:30px;font-weight:600;color:#555;margin-top:6px;letter-spacing:3px}
-.card .hours{position:absolute;left:0;right:0;bottom:0;text-align:center;padding:22px 0;border-top:2px dashed #eee;font-size:26px;font-weight:800}
-.card .hours span{color:#EE6A1B}
-.cap{position:absolute;right:73px;top:812px;width:400px;text-align:center;font-size:19px;color:#555}
-.line{position:absolute;left:73px;right:73px;top:918px;height:2px;background:#e3e3e3}
-.foot{position:absolute;top:962px;font-size:20px;font-weight:700;letter-spacing:.3px}
-.fl{left:73px}.fr{right:92px;color:#444}
-.title{font-size:{{TITLE_SIZE}}px;width:520px}
-.sub1,.sub2{width:500px;line-height:1.35}
-.card .topic{text-align:center;font-size:{{TOPIC_SIZE}}px;font-weight:900;margin-top:70px;letter-spacing:-2px;padding:0 20px;line-height:1.05}
-.card .date2{text-align:center;font-size:26px;font-weight:600;color:#555;margin-top:22px;letter-spacing:3px}
+html,body{width:1080px;height:1350px;overflow:hidden;font-family:'Inter',Helvetica,Arial,sans-serif;color:#141414}
+.p{position:relative;width:1080px;height:1350px;overflow:hidden;background:{{BG}}}
+.img{position:absolute;inset:0;background:url('{{IMAGE}}') center/cover no-repeat}
+.logo{position:absolute;font-size:64px;font-weight:900;font-style:italic;letter-spacing:-1.5px;color:{{LOGO_COLOR}};z-index:3}
+.note{position:absolute;z-index:3;background:rgba(255,255,255,.88);color:#141414;font-size:15px;font-weight:700;padding:8px 14px;border-radius:8px}
+.txt{position:absolute;z-index:3;left:93px;right:93px}
+.lab{display:flex;align-items:center;gap:20px;font-size:28px;font-weight:700;letter-spacing:.5px}
+.lab:before{content:"";width:58px;height:6px;background:#EE6A1B;border-radius:3px}
+.h{font-size:{{TITLE_SIZE}}px;font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-top:22px}
+.src{font-size:20px;font-weight:600;margin-top:22px;opacity:.7}
+.tri{position:absolute;right:26px;bottom:26px;width:0;height:0;border-left:115px solid transparent;border-bottom:95px solid #EE6A1B;z-index:3}
+/* A: foto atas, panel krim bawah */
+.v-foto .img{bottom:405px}
+.v-foto .logo{top:40px;left:0;right:0;text-align:center}
+.v-foto .note{left:75px;top:895px}
+.v-foto .panel{position:absolute;left:0;right:0;bottom:0;height:405px;background:#FBEFE2}
+.v-foto .txt{top:995px}
+/* B: foto penuh, teks putih atas gradien gelap */
+.v-penuh .shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 45%,rgba(0,0,0,.88) 78%)}
+.v-penuh .logo{top:56px;left:80px}
+.v-penuh .note{right:80px;top:76px}
+.v-penuh .txt{bottom:120px;color:#fff}
+/* C: logo jenama besar atas warna jenama */
+.v-logo .img{inset:150px 230px 560px;background-size:contain}
+.v-logo .logo{top:50px;left:0;right:0;text-align:center}
+.v-logo .glow{position:absolute;left:50%;top:420px;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 60%)}
+.v-logo .panel{position:absolute;left:60px;right:60px;bottom:60px;height:420px;background:#fff;border-radius:28px}
+.v-logo .txt{top:925px;left:120px;right:120px}
+.v-logo .note{display:none}
 </style></head>
-<body><div class="wrap">
+<body><div class="p {{VARIANT}}">
+<div class="glow"></div><div class="img"></div><div class="shade"></div><div class="panel"></div>
 <div class="logo">Genius</div>
-<div class="bar"></div>
-<div class="label">TECH NEWS</div>
-<div class="title">{{HEADLINE}}</div>
-<div class="sub1">{{SUMMARY_1}}</div>
-<div class="sub2" style="top:{{SUB2_TOP}}px">{{SUMMARY_2}}</div>
-<div class="pill">Source: {{SOURCE}}</div>
-<div class="card">
-  <div class="top">LATEST</div>
-  <div class="topic">{{TOPIC}}</div>
-  <div class="date2">{{DATE_TEXT}}</div>
-  <div class="hours"><span>●</span> {{CARD_TAG}}</div>
+<div class="note">{{IMAGE_NOTE}}</div>
+<div class="txt">
+  <div class="lab">BERITA TEKNOLOGI</div>
+  <div class="h">{{HEADLINE}}</div>
+  <div class="src">Sumber: {{SOURCE}} &nbsp;·&nbsp; Genius Advanced Bangi / Cyberjaya</div>
 </div>
-<div class="cap">Need a repair or upgrade? Talk to us.</div>
-<div class="line"></div>
-<div class="foot fl">LAPTOP &amp; PC REPAIR</div>
-<div class="foot fr">BANGI &nbsp;/&nbsp; CYBERJAYA</div>
+<div class="tri"></div>
 </div></body></html>
