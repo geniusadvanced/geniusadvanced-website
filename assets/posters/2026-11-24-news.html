@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ms"><head><meta charset="utf-8">
+<!-- Genius Advanced - poster berita (1080x1350). VARIANT: v-foto | v-penuh | v-logo -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;font-family:'Inter',Helvetica,Arial,sans-serif;color:#141414}
+.p{position:relative;width:1080px;height:1350px;overflow:hidden;background:#000}
+.img{position:absolute;inset:0;background:url('2026-11-24-news-image.jpg') center/cover no-repeat}
+.logo{position:absolute;font-size:64px;font-weight:900;font-style:italic;letter-spacing:-1.5px;color:#ffffff;z-index:3}
+.note{position:absolute;z-index:3;background:rgba(255,255,255,.88);color:#141414;font-size:15px;font-weight:700;padding:8px 14px;border-radius:8px}
+.txt{position:absolute;z-index:3;left:93px;right:93px}
+.lab{display:flex;align-items:center;gap:20px;font-size:28px;font-weight:700;letter-spacing:.5px}
+.lab:before{content:"";width:58px;height:6px;background:#EE6A1B;border-radius:3px}
+.h{font-size:72px;font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-top:22px}
+.src{font-size:20px;font-weight:600;margin-top:22px;opacity:.7}
+.tri{position:absolute;right:26px;bottom:26px;width:0;height:0;border-left:115px solid transparent;border-bottom:95px solid #EE6A1B;z-index:3}
+/* A: foto atas, panel krim bawah */
+.v-foto .img{bottom:405px}
+.v-foto .logo{top:40px;left:0;right:0;text-align:center}
+.v-foto .note{left:75px;top:895px}
+.v-foto .panel{position:absolute;left:0;right:0;bottom:0;height:405px;background:#FBEFE2}
+.v-foto .txt{top:995px}
+/* B: foto penuh, teks putih atas gradien gelap */
+.v-penuh .shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 45%,rgba(0,0,0,.88) 78%)}
+.v-penuh .logo{top:56px;left:80px}
+.v-penuh .note{right:80px;top:76px}
+.v-penuh .txt{bottom:120px;color:#fff}
+/* C: logo jenama besar atas warna jenama */
+.v-logo .img{inset:150px 230px 560px;background-size:contain}
+.v-logo .logo{top:50px;left:0;right:0;text-align:center}
+.v-logo .glow{position:absolute;left:50%;top:420px;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 60%)}
+.v-logo .panel{position:absolute;left:60px;right:60px;bottom:60px;height:420px;background:#fff;border-radius:28px}
+.v-logo .txt{top:925px;left:120px;right:120px}
+.v-logo .note{display:none}
+.logo img{display:block;width:280px;height:auto;background:#fff;border-radius:14px}
+</style></head>
+<body><div class="p v-penuh">
+<div class="glow"></div><div class="img"></div><div class="shade"></div><div class="panel"></div>
+<div class="logo"><img src="2026-11-24-news-logo.png" width="1280" height="720" alt="Genius"></div>
+<div class="note">Foto: Notebookcheck</div>
+<div class="txt">
+  <div class="lab">BERITA TEKNOLOGI</div>
+  <div class="h">Skrin komputer riba<br>guna kurang 1 watt</div>
+  <div class="src">Sumber: Notebookcheck &nbsp;·&nbsp; Genius Advanced Bangi / Cyberjaya</div>
+</div>
+<div class="tri"></div>
+</div></body></html>
